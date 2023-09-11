@@ -7,6 +7,8 @@ import {
   useWindowDimensions,
 } from 'react-native';
 
+// PROGRESS: Just installed libraries, going to set up for the stack and redux states
+
 export default function App() {
   const {height} = useWindowDimensions();
   const [action, setAction] = useState('Doing nothing');

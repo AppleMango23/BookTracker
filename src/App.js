@@ -9,25 +9,28 @@ import {
 
 export default function App() {
   const {height} = useWindowDimensions();
-  const [number, setNumber] = useState(0);
+  const [action, setAction] = useState('Doing nothing');
 
   function handlePress() {
-    setNumber(parseInt(Math.random() * 10000, 10) % 100);
+    setAction('I am Reading Now!');
   }
 
   return (
     <View style={[styles.container, {height}, StyleSheet.absoluteFill]}>
-      <Text>Random number: {number}</Text>
+      <Text>Activity right now: {action}</Text>
       <View style={styles.br} />
       <Pressable
         style={({pressed}) => [
           {
             opacity: pressed ? 0.7 : 1,
+            borderRadius: 30,
           },
           styles.btn,
         ]}
         onPress={handlePress}>
-        <Text style={styles.btnText}>Generate a number</Text>
+        <Text style={styles.btnText}>
+          {action !== 'Doing nothing' ? 'Done Reading' : 'Reading Now'}
+        </Text>
       </Pressable>
     </View>
   );
@@ -49,5 +52,6 @@ const styles = StyleSheet.create({
   },
   btnText: {
     color: '#fff',
+    fontSize: 15,
   },
 });

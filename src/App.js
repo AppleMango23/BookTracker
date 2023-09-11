@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 
 // PROGRESS: Just installed libraries, going to set up for the stack and redux states
+// REFER: Can refer from SenangPaxUser
 
 export default function App() {
   const {height} = useWindowDimensions();
